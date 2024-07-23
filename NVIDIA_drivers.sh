@@ -19,20 +19,9 @@ sudo apt-get install ubuntu-drivers-common
 sudo ubuntu-drivers devices
 
 echo ""
-echo "please review the list of above selections and choose which driver you wish to install for your system."
-echo "Example: 'nvidia-driver-470'"
-echo "If you wish to auto-select latest simply press return with no options"
-read option
-case $option in
-  nvidia-driver-* )
-          echo "now updating with requested change: ${option}"
-          sudo apt install ${option} -y
-          ;;
-  * )
-          echo "auto selecting latest"
-          ubuntu-drivers autoinstall
-          ;;
-esac
+echo "This script will autoinstall the latest driver"
+
+ubuntu-drivers autoinstall
 
 #sudo apt install <driver-version> -y ##example: sudo apt install nvidia-driver-470 -y
 
